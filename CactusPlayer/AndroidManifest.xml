@@ -64,4 +64,8 @@
         </activity>
     </application>
 
+    <receiver  
+         android:name=".CustomReceiver"  
+         android:exported="true" >  
+    </receiver>  
 </manifest>
