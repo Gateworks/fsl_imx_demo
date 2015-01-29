@@ -116,6 +116,9 @@ public class EthernetManager {
         mContext = context;
 
         DevName = new String[1];
+        String sIfaceMatch = context.getResources().getString(
+                        com.android.internal.R.string.config_ethernet_iface_regex);
+
 
         DevName[0] = "eth0";//mTracker.getLinkProperties().getInterfaceName();
 
@@ -136,6 +139,7 @@ public class EthernetManager {
         } catch (RemoteException e) {
             Log.e(TAG, "Could not get list of interfaces " + e);
         }
+
 
         HandlerThread dhcpThread = new HandlerThread("DHCP Handler Thread");
         dhcpThread.start();
